@@ -35,8 +35,9 @@ Todo.update = (todo, id) => {
         description = $2,
         category = $3,
         status = $4
+        WHERE id = $5
         `,
-       [todo.title, todo.description, todo.category, todo.status] 
+       [todo.title, todo.description, todo.category, todo.status, id] 
     );
 };
 

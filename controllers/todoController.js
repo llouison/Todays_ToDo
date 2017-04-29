@@ -38,7 +38,7 @@ controller.create = (req, res) => {
         title: req.body.title,
         description: req.body.description,
         category: req.body.category,
-        status: req.body.status,
+        status: 'To Do',
     })
     .then(todo => {
         res.redirect('/todos');
