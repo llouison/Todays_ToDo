@@ -73,7 +73,7 @@ controller.update = (req, res) => {
         status: req.body.status,
     }, req.params.id)
     .then(todo => {
-        res.redirect('todos');
+        res.redirect('/todos');
     })
     .catch(err => {
         res.status(400).json(err);

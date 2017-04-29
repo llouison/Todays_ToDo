@@ -27,7 +27,7 @@ Todo.create = todo => {
 };
 
 // creating the update method
-Todo.update = (quote, id) => {
+Todo.update = (todo, id) => {
     return db.none(
         `
         UPDATE todo SET
