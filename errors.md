@@ -1,4 +1,5 @@
-I googled the error code and it said syntax error. The console said GET /todos 400 8.562 ms - 136, so I went to the model and realized I was missing some text.
+
+1. I googled the error code and it said syntax error. The console said GET /todos 400 8.562 ms - 136, so I went to the model and realized I was missing some text.
 ```js
 {
 name: "error",
@@ -11,7 +12,7 @@ line: "1086",
 routine: "scanner_yyerror"
 }
 ```
-I looked up the error code on postgresql.org and it said unidentified table. 
+2. I looked up the error code on postgresql.org and it said unidentified table. 
 
 ```js
 {
@@ -25,7 +26,7 @@ line: "1160",
 routine: "parserOpenTable"
 }
 ```
-The reference error says todo wasn't defined on line 39 in my model. I had it as quote.
+3. The reference error says todo wasn't defined on line 39 in my model. I had it as quote.
 ```
 ReferenceError: todo is not defined
     at Object.Todo.update (/Users/lisalouison/GA/hws/unit02/Todays_ToDo/models/todo.js:39:9)
@@ -39,3 +40,6 @@ ReferenceError: todo is not defined
     at param (/Users/lisalouison/GA/hws/unit02/Todays_ToDo/node_modules/express/lib/router/index.js:365:14)
     at Function.process_params (/Users/lisalouison/GA/hws/unit02/Todays_ToDo/node_modules/express/lib/router/index.js:410:3)
 ```
+4. My database wasn't showing up in /todos. I knew it had to do with the migration and seed files but wasn't sure where the problem was. I slacked Daniel and J. J explained the seed file kept dropping and recreating a blank bd. 
+
+5. After I created a new item and was redirected back to the to-do index, all the items are replaced with the information of the new item. I knew it had to do with the update function. I found that I forgot to specify WHERE id = $5 in the model, so it was updating everything.
