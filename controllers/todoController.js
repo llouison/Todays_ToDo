@@ -14,7 +14,7 @@ controller.index = (req, res) => {
         });
     })
     .catch(err => {
-        re.status(400).json(err);
+        res.status(400).json(err);
     });
 };
 
@@ -38,10 +38,10 @@ controller.create = (req, res) => {
         title: req.body.title,
         description: req.body.description,
         category: req.body.category,
-        status: 'To Do',
+        status: req.body.status,
     })
     .then(todo => {
-        res.redirect('todos');
+        res.redirect('/todos');
     })
     .catch(err => {
         res.status(400).json(err);

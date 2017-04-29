@@ -6,7 +6,7 @@ const Todo = {};
 
 // creating the findall method
 Todo.findAll = () => {
-    return db.query('SELECT * FROM todo ORDER BY ASC');
+    return db.query('SELECT * FROM todo ORDER BY id ASC');
 };
 
 // creating the findbyid method
@@ -20,7 +20,7 @@ Todo.create = todo => {
         `
         INSERT INTO todo
         (title, description, category, status)
-        VALUES ($1, $2, $3) RETURNING *
+        VALUES ($1, $2, $3, $4) RETURNING *
         `,
         [todo.title, todo.description, todo.category, todo.status]
     );
