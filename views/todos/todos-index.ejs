@@ -1,0 +1,18 @@
+<% include ../partials/boilerplate %>
+
+    <a href='/todos/add'>Add a new task</a>
+
+    <div class='frame'>
+    <% todoData.forEach(function(todo) { %>
+        <h3><%= todo.title %></h3>
+            <span class='author'><%= todo.category %></span>
+            <span class='genre'><%= todo.status %></span>
+        <a href='/todos/<%= todo.id %>'>Info</a>
+        <a href='/todos/edit/<%= todo.id %>'>Edit</a>
+        <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
+            <input type='submit' value='Delete' />
+        </form>
+    <% }) %>
+    </div>
+</body>
+</html>
