@@ -7,11 +7,10 @@
         <span><%= todo.description %></span>
         </div>
     </div>
-    <a href='/todos/edit/<%= todo.id %>'>Edit</a>
+    <a href='/todos/todos-edit/<%= todo.id %>'>Edit</a>
     <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
         <input type='submit' value='Delete' />
     </form>
   <a href='/todos'>Return to list</a>
 
-</body>
-</html>
+<% include ../partials/end %>

@@ -5,8 +5,8 @@
     <div class='frame'>
     <% todoData.forEach(function(todo) { %>
         <h3><%= todo.title %></h3>
-            <span class='author'><%= todo.category %></span>
-            <span class='genre'><%= todo.status %></span>
+            <span class='form'><%= todo.status %></span></br>
+            <span class='form'><%= todo.category %></span></br>
         <a href='/todos/<%= todo.id %>'>Info</a>
         <a href='/todos/edit/<%= todo.id %>'>Edit</a>
         <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
@@ -14,5 +14,5 @@
         </form>
     <% }) %>
     </div>
-</body>
-</html>
+    
+<% include ../partials/end %>

@@ -1,15 +1,12 @@
 <% include ../partials/boilerplate %>
-
+<h1>Add Page</h1>
 <div class='frame'>
   <form method='POST' action='/todos'>
     <input name='title' type='text' class='form' placeholder='title' />
     <input name='category' type='text' class='form' placeholder='category' />
     <textarea name='description' class='form' placeholder='Give a description here...'></textarea>
-    <input type="radio" name="status" value="to do"> To Do<br>
-    <input type="radio" name="status" value="done"> Done<br>
     <input type='submit' value='Add It' />
   </form>
 </div>
 
-</body>
-</html>
+<% include ../partials/end %>

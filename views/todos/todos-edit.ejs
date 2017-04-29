@@ -1,13 +1,13 @@
 <% include ../partials/boilerplate %>
+<h1>Edit Page</h1>
 
 <form method='POST' action='/todos/<%= id %>?_method=PUT'>
   <input name='title' type='text' value='<%= todo.title %>' />
   <input name='category' type='text' value='<%= todo.category %>' />
-  <textarea name='description' class='form' value='<%= todo.description %>'></textarea>
-  <input type="radio" name="status" value="to do"> To Do<br>
+  <textarea name='description' class='form'><%= todo.description %></textarea>
+  <input type="radio" name="status" value="to do" checked> To Do<br>
   <input type="radio" name="status" value="done"> Done<br>
   <input type='submit' value='Save' />
 </form>
 
-</body>
-</html>
+<% include ../partials/end %>
