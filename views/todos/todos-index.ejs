@@ -1,17 +1,16 @@
 <% include ../partials/boilerplate %>
 <header>
-<h1>Today's To-Do</h1>
-<nav>
+    <h1>Today's To-Do</h1>
+    <nav>
         <li><a href='/'>Home</a></li>
         <li><a class='current' href='/todos'>To-Do</a></li>
         <li><a href='/todos/add'>Add</a></li>
-</nav>
+    </nav>
 </header>
-
 <hr>
 <h1><span>To-Do</span></h1>
-    <div class='frame'>
-    <% todoData.forEach(function(todo) { %>
+<div class='frame'>
+    <% todoTasks.forEach(function(todo) { %>
         <div class='note'>
             <h3><%= todo.title %></h3>
                 <span>Status: <%= todo.status %></span></br>
@@ -23,10 +22,23 @@
             </form>
         </div>
     <% }) %>
-    </div>
+</div>
     <a class='button' href='/todos/add'>Add a new todo</a>
     <hr>
 <h1><span>Done</span></h1>
-    
+<div class='frame'>
+    <% doneTasks.forEach(function(todo) { %>
+        <div class='note'>
+            <h3><%= todo.title %></h3>
+                <span>Status: <%= todo.status %></span></br>
+                <span>Category: <%= todo.category %></span>
+            <a href='/todos/<%= todo.id %>'>Info</a>
+            <a href='/todos/edit/<%= todo.id %>'>Edit</a>
+            <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
+                <input type='submit' class='button' value='Delete' />
+            </form>
+        </div>
+    <% }) %>
+</div>
     
 <% include ../partials/end %>

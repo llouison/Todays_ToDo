@@ -6,11 +6,27 @@ const controller = {};
 
 // defining the view to render once the findall promise is complete
 controller.index = (req, res) => {
+    
     Todo.findAll()
     .then(todos => {
+        let todotasks = [];
+        let donetasks = [];
+        // this filter finds all the open todos and pushes them in the todotasks array
+        todos.filter(todo => {
+            if (todo.status === 'To Do'){
+                todotasks.push(todo);
+            }
+        })
+        // this filter finds all the complete todos and pushes them in the donetasks array
+        todos.filter(todo => {
+            if (todo.status === 'Done'){
+                donetasks.push(todo);
+            }
+        })
         res.render('todos/todos-index', {
             documentTitle: 'Today\'s To-Do',
-            todoData: todos,
+            todoTasks: todotasks,
+            doneTasks: donetasks,
         });
     })
     .catch(err => {
