@@ -1,11 +1,14 @@
 <% include ../partials/boilerplate %>
-<nav>
-    <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/todos'>To-Do</a></li>
-        <li><a href='/todos/add'>Add</a></li>
-    </ul>
-</nav>
+<header>
+    <h1>Today's To-Do</h1>
+    <nav>
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/todos'>To-Do</a></li>
+            <li><a href='/todos/add'>Add</a></li>
+        </ul>
+    </nav>
+</header>
     <div class='note'>
         <h3><%= todo.title %></h3>
         <span><%= todo.status %></span>

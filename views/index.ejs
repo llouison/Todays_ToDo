@@ -1,4 +1,6 @@
 <% include ./partials/boilerplate.ejs %>
+<header>
+<h1>Today's To-Do</h1>
 <nav>
     <ul>
         <li><a class='current' href='/'>Home</a></li>
@@ -6,11 +8,12 @@
         <li><a href='/todos/add'>Add</a></li>
     </ul>
 </nav>
+</header>
 <div class="note">
     <h1 class='title'><%= message %></h1>
     <h1 class='check'>&#x2713;</h1>
-    <a href='/todos'>View all tasks</a>
-    <a href='/todos/add'>Create a new task</a>
+    <a href='/todos'>View all to-do</a>
+    <a href='/todos/add'>Create a new to-do</a>
 </div>
     
 <% include ./partials/end %>
