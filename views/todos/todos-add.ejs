@@ -1,11 +1,18 @@
 <% include ../partials/boilerplate %>
-<h1>Add Page</h1>
-<div class='frame'>
+<nav>
+    <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/todos'>To-Do</a></li>
+        <li><a class='current' href='/todos/add'>Add</a></li>
+    </ul>
+</nav>
+<h1>New Task</h1>
+<div class='note'>
   <form method='POST' action='/todos'>
     <input name='title' type='text' class='form' placeholder='title' />
     <input name='category' type='text' class='form' placeholder='category' />
     <textarea name='description' class='form' placeholder='Give a description here...'></textarea>
-    <input type='submit' value='Add It' />
+    <input type='submit' class='button' value='Add It' />
   </form>
 </div>
 

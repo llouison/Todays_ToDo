@@ -1,18 +1,27 @@
 <% include ../partials/boilerplate %>
-
+<nav>
+    <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a class='current' href='/todos'>To-Do</a></li>
+        <li><a href='/todos/add'>Add</a></li>
+    </ul>
+</nav>
     <a href='/todos/add'>Add a new task</a>
 
     <div class='frame'>
     <% todoData.forEach(function(todo) { %>
-        <h3><%= todo.title %></h3>
-            <span class='form'><%= todo.status %></span></br>
-            <span class='form'><%= todo.category %></span></br>
-        <a href='/todos/<%= todo.id %>'>Info</a>
-        <a href='/todos/edit/<%= todo.id %>'>Edit</a>
-        <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
-            <input type='submit' value='Delete' />
-        </form>
+        <div class='note'>
+            <h3><%= todo.title %></h3>
+                <span><%= todo.status %></span></br>
+                <span><%= todo.category %></span>
+            <a href='/todos/<%= todo.id %>'>Info</a>
+            <a href='/todos/edit/<%= todo.id %>'>Edit</a>
+            <form method='POST' action='/todos/<%= todo.id %>?_method=DELETE'>
+                <input type='submit' class='button' value='Delete' />
+            </form>
+        </div>
     <% }) %>
     </div>
+    
     
 <% include ../partials/end %>

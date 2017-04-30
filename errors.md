@@ -43,3 +43,9 @@ ReferenceError: todo is not defined
 4. My database wasn't showing up in /todos. I knew it had to do with the migration and seed files but wasn't sure where the problem was. I slacked Daniel and J. J explained the seed file kept dropping and recreating a blank bd. 
 
 5. After I created a new item and was redirected back to the to-do index, all the items are replaced with the information of the new item. I knew it had to do with the update function. I found that I forgot to specify WHERE id = $5 in the model, so it was updating everything.
+
+6. The console couldn't find the stylesheets. I thought it was the path in the boilerplate partial. After I fixed it I got the same error so I checked the app.js where I defined the statis path. I was missing a /.
+```
+GET /static/styles/reset.css 404 0.219 ms - 30
+GET /static/styles/style.css 404 1.061 ms - 30
+```

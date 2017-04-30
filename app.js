@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // directing express to static files
-app.use('static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, 'public')));
 // setting up the morgan logger function to run on the dev script
 app.use(logger('dev'));
 // setting up the body parser function to run on json info
@@ -34,7 +34,7 @@ app.use(methodOverride('_method'));
 // setting up the route to the index page
 app.get('/', function(req, res){
     res.render('index', {
-        message: 'Welcome to my to-do app',
+        message: 'Welcome to Today\'s To-do',
         documentTitle: 'Today\'s To-Do',
     });
 });

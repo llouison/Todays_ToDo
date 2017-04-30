@@ -1,7 +1,16 @@
 <% include ./partials/boilerplate.ejs %>
-
-    <h1><%= message %></h1>
-    <p>Get Organized!</p>
-    <a href='/todos'>See all todos</a>
+<nav>
+    <ul>
+        <li><a class='current' href='/'>Home</a></li>
+        <li><a href='/todos'>To-Do</a></li>
+        <li><a href='/todos/add'>Add</a></li>
+    </ul>
+</nav>
+<div class="note">
+    <h1 class='title'><%= message %></h1>
+    <h1 class='check'>&#x2713;</h1>
+    <a href='/todos'>View all tasks</a>
+    <a href='/todos/add'>Create a new task</a>
+</div>
     
 <% include ./partials/end %>

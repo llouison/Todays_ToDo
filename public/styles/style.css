@@ -1,0 +1,147 @@
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  line-height: 1.4em;
+  padding: 50px;
+  box-sizing: border-box;
+  font-size: 18px;
+  /*background: #EA3324 url("../images/gingham.jpg");*/
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1{
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+  color: #EA3324;
+  font-weight: bold;
+  padding-bottom: 3px;
+  margin-bottom: 17px;
+  text-align: center;
+}
+.title{
+    border-bottom:dotted;
+}
+.check{
+  font-size:45px;
+  padding: 10px;
+  border-bottom: none;
+}
+h2{
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+h3{
+  color: #EA3324;
+  font-weight: bold;
+}
+h4{
+  font-size: 30px;
+  color: #EA3324;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+p {
+  margin: 1em 0;
+}
+a {
+  color: #818181;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+a:hover{
+  color: #EA3324;
+}
+nav a:hover{
+  border-bottom:dotted;
+}
+.current {
+    color: #EA3324;
+    border-bottom:dotted;
+}
+img {
+  width: 100%;
+  text-align: center;
+}
+.frame{
+  width: 70vw;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+/*note design found at http://codepen.io/edbond88/pen/CcgvA*/
+.note{
+  background: #CAF4B9;
+  border-radius: 6px/18px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  margin: 15px auto;
+  transform: rotate(2deg);
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.5); 
+}
+.note:nth-child(2n+0) {
+    background: #F7E999;
+    transform: rotate(-1deg);
+}
+.note:nth-child(3n+0) {
+    background: #FFBDA3;
+    transform: rotate(1deg);
+}
+.note:nth-child(4n+0) {
+    background: #b9dcf4;
+    transform: rotate(-2deg);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form{
+  border: none;
+  border-bottom: 3px solid grey;
+  margin: 10px;
+  font-size: 1em;
+  padding: 15px;
+  transition: 0.5s all;
+}
+.form:focus {
+  border-bottom: 3px solid #EA3324;
+  transition: 0.5s all;
+  outline: none;
+}
+.button {
+  font-size: 1em;
+  margin: 20px;
+  background-color: #EA3324;
+  color: #fff;
+  transition: 0.2s all;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+}
+footer{
+    /*align-self: flex-end;*/
+}
+
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 12px;
+  }
+  h1, h4 {
+    font-size: 16px;
+  }
+  .frame{
+  flex-direction: column;
+  }
+}
