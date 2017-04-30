@@ -2,15 +2,14 @@
 <header>
 <h1>Today's To-Do</h1>
 <nav>
-    <ul>
         <li><a href='/'>Home</a></li>
         <li><a class='current' href='/todos'>To-Do</a></li>
         <li><a href='/todos/add'>Add</a></li>
-    </ul>
 </nav>
 </header>
 
-<h1>To-Do</h1>
+<hr>
+<h1><span>To-Do</span></h1>
     <div class='frame'>
     <% todoData.forEach(function(todo) { %>
         <div class='note'>
@@ -27,7 +26,7 @@
     </div>
     <a class='button' href='/todos/add'>Add a new todo</a>
     <hr>
-<h1>Done</h1>
+<h1><span>Done</span></h1>
     
     
 <% include ../partials/end %>
